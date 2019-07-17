@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Reality Games</string>
+    <string name="app_name" translatable="false">forRG</string>
     <string name="error_with_data_download">Error when downloading data</string>
     <string name="refresh">Refresh</string>
     <string name="cancel">Cancel</string>

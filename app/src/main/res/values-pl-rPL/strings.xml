@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_with_data_download">Nie udało się pobrać danych</string>
+    <string name="refresh">Odśwież</string>
+    <string name="cancel">Anuluj</string>
+    <string name="location_device_denied">Brak dostępu do lokalizacji, włącz lokalizację i spróbuj ponownie</string>
+    <string name="permission_error_info">Nie udzieliles zgody</string>
+    <string name="back">Powrót</string>
+</resources>

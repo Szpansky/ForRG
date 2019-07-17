@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">Reality Games</string>
+    <string name="error_with_data_download">Error when downloading data</string>
+    <string name="refresh">Refresh</string>
+    <string name="cancel">Cancel</string>
+    <string name="location_device_denied">No access to the location, enable location and try again</string>
+    <string name="permission_error_info">Permission denied</string>
+    <string name="back">Back</string>
+</resources>

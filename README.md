@@ -11,4 +11,3 @@ application that will fetch information about launch platforms from SpaceX REST 
 * Clicking on each element of the list  display details about each platform (name, status, location, detailed description, etc).
 
 * possibility to view launch site location on the map
-

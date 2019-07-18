@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkLoading extends BaseLoading {
-    SpaceXApi launchPads;
+    SpaceXApi spaceXApi;
 
     public NetworkLoading() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -29,14 +29,14 @@ public class NetworkLoading extends BaseLoading {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
-        launchPads = retrofit.create(SpaceXApi.class);
+        spaceXApi = retrofit.create(SpaceXApi.class);
     }
 
     @Override
     public void loadData(final ListCallBack listCallBack) {
         super.loadData(listCallBack);
 
-        launchPads.allLaunchpadList().enqueue(new Callback<List<LaunchpadModel>>() {
+        spaceXApi.allLaunchpadList().enqueue(new Callback<List<LaunchpadModel>>() {
             @Override
             public void onResponse(@NonNull Call<List<LaunchpadModel>> call, @NonNull Response<List<LaunchpadModel>> response) {
                 if (response.isSuccessful()) {
@@ -57,19 +57,8 @@ public class NetworkLoading extends BaseLoading {
     @Override
     public void loadData(String launchpadSiteId, final ItemCallBack itemCallBack) {
         super.loadData(launchpadSiteId, itemCallBack);
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.siteURL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .build();
-
-        SpaceXApi launchPad = retrofit.create(SpaceXApi.class);
-
-        launchPad.getLaunchpad(launchpadSiteId).enqueue(new Callback<LaunchPadModelDetail>() {
+        spaceXApi.getLaunchpad(launchpadSiteId).enqueue(new Callback<LaunchPadModelDetail>() {
             @Override
             public void onResponse(@NonNull Call<LaunchPadModelDetail> call, @NonNull Response<LaunchPadModelDetail> response) {
                 if (response.isSuccessful()) {
